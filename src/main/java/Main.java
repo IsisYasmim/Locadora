@@ -42,14 +42,20 @@ public class Main {
         generoController.visualizarDetalhes();
         categoriaController.visualizarDetalhes();
 
+        pause();
+        
         Filme.listarFilme();
         String nomeFilme = "Her";
+
+        System.out.println("\nIremos remover um filme da lista de filmes cadastrados!");
+        pause();
+        
         Filme.removerFilme(nomeFilme);
         Filme.listarFilme();
     }
 
     public static void pause() {
-        System.out.println("Pressione Enter para continuar...");
+        System.out.println("\nPressione Enter para continuar...");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine(); // Aguarda o usuário pressionar Enter
     }
