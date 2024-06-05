@@ -11,7 +11,7 @@ public class Filme{
         this.nome = nome;
         this.genero = genero;
         this.anoLancamento = anoLancamento;
-        exemplares = new ArrayList<Exemplar>();
+        this.exemplares = new ArrayList<Exemplar>();
     }
 
     public String getNome() {

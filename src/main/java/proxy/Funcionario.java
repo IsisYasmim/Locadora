@@ -1,7 +1,7 @@
 package proxy;
 
 
-class Funcionario extends Pessoa {
+public class Funcionario extends Pessoa {
     private String cargo;
 
     public Funcionario(String nome, String cpf, String email, String cargo) {

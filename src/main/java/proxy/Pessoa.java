@@ -2,7 +2,7 @@ package proxy;
 import movimentacoes.Locacao;
 import java.util.ArrayList;
         
-abstract class Pessoa {
+public abstract class Pessoa {
     private String nome;
     private String cpf;
     private String email;

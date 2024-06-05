@@ -2,7 +2,7 @@ package proxy;
 import modelo.Filme;
 import movimentacoes.Locacao;
 
-class ProxyLocadora implements Locadora {
+public class ProxyLocadora implements Locadora {
     private SistLocadora sistemaLocadora;
     private Funcionario funcionario;
 
