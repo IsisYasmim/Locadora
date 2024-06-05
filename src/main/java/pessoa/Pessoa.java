@@ -1,4 +1,4 @@
-package proxy;
+package pessoa;
 import movimentacoes.Locacao;
 import java.util.ArrayList;
         
@@ -48,6 +48,10 @@ public abstract class Pessoa {
     }
 
     public void mostrarLocacoes(){
-        
+           System.out.println("\n================\n");
+        System.out.println("Locações de " + getNome() + ":");
+        for (Locacao locacao : locacoes) {
+            System.out.println("- Exemplar ID: " + locacao.getExemplar().getCodigo() +
+                               ", Valor: " + locacao.getExemplar().getValor());}
     }
 }

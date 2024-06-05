@@ -4,10 +4,11 @@ import modelo.Exemplar;
 import modelo.Filme;
 import modelo.Genero;
 import movimentacoes.Locacao;
+import movimentacoes.Devolucao;
 import pagamento.Boleto;
 import pagamento.Pagamento;
-import proxy.Cliente;
-import proxy.Funcionario;
+import pessoa.Cliente;
+import pessoa.Funcionario;
 import proxy.ProxyLocadora;
 
 
@@ -20,35 +21,54 @@ public class Main {
         ProxyLocadora sistemaLocadoraAtendente = new ProxyLocadora(atendente);
 
         Cliente cliente = new Cliente("João", "11223344556", "joao@example.com");
+
         Genero genero = new Genero("Fantasia");
+        Genero generoDrama = new Genero("Drama");
+        Genero generoFiccaoCientifica = new Genero("Ficção Científica");
+        Genero generoBiografia = new Genero("Biografia");
+        
         Filme filme = new Filme("O Senhor dos Anéis", genero, 2001);
         Exemplar exemplar = new Exemplar(1, 50.0f);
+
+
+  
         filme.adicionarExemplar(exemplar);
+
+        Filme jogosVorazes = new Filme("Jogos Vorazes", generoFiccaoCientifica, 2012);
+        Exemplar exemplar2 = new Exemplar(2, 40.0f);
+        jogosVorazes.adicionarExemplar(exemplar2);
+
+        Filme extraordinario = new Filme("Extraordinário", generoDrama, 2017);
+        Exemplar exemplar3 = new Exemplar(3, 30.0f);
+        extraordinario.adicionarExemplar(exemplar3);
+
+        Filme interestelar = new Filme("Interestelar", generoFiccaoCientifica, 2014);
+        Exemplar exemplar4 = new Exemplar(4, 45.0f);
+        interestelar.adicionarExemplar(exemplar4);
+
+        Filme listaDeSchindler = new Filme("A Lista de Schindler", generoBiografia, 1993);
+        Exemplar exemplar5 = new Exemplar(5, 60.0f);
+        listaDeSchindler.adicionarExemplar(exemplar5);
 
         sistemaLocadoraGerente.cadastrarCliente(cliente);
         sistemaLocadoraGerente.cadastrarFilme(filme);
+        sistemaLocadoraGerente.cadastrarFilme(jogosVorazes);
+        sistemaLocadoraGerente.cadastrarFilme(extraordinario);
+        sistemaLocadoraGerente.cadastrarFilme(interestelar);
+        sistemaLocadoraGerente.cadastrarFilme(listaDeSchindler);
 
-        Locacao locacao = new Locacao(exemplar);
+        
+        Locacao locacao = new Locacao(exemplar, cliente);
         sistemaLocadoraAtendente.registrarLocacao(locacao);
-
         Pagamento pagamento = new Boleto();
-        pagamento.pagar(exemplar.getValor());
+        Devolucao devolucao = new Devolucao(locacao);
+        devolucao.setPagamento(pagamento);
 
-        sistemaLocadoraAtendente.registrarDevolucao(locacao);
+        sistemaLocadoraAtendente.registrarDevolucao(devolucao);
+
+        sistemaLocadoraGerente.listarFilmes();
+
+        //cliente.mostrarLocacoes();
+
     }
 }
-
-
-
-
-
-//public class Main {
-//    public static void main(String[] args) {
-
- //   public static void pause() {
- //       System.out.println("\nPressione Enter para continuar...");
-//        Scanner scanner = new Scanner(System.in);
-//        scanner.nextLine(); // Aguarda o usuário pressionar Enter
-//    }
-
-//}

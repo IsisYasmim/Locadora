@@ -1,4 +1,4 @@
-package proxy;
+package pessoa;
 
 
  public class Cliente extends Pessoa {

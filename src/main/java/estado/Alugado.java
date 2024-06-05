@@ -9,7 +9,7 @@ public class Alugado implements Estado{
     }    
 
     public void alugar() {
-        System.out.println("Erro: o exemplar não pode ser alugado");        
+        System.out.println("O exemplar não pode ser alugado");        
     }
 
     public void devolver() {

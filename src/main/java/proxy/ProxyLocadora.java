@@ -1,10 +1,17 @@
 package proxy;
+
+import java.util.ArrayList;
+
 import modelo.Filme;
 import movimentacoes.Locacao;
+import movimentacoes.Devolucao;
+import pessoa.Funcionario;
+import pessoa.Cliente;
 
 public class ProxyLocadora implements Locadora {
     private SistLocadora sistemaLocadora;
     private Funcionario funcionario;
+    private ArrayList<Filme> filmes;
 
     public ProxyLocadora(Funcionario funcionario) {
         this.sistemaLocadora = new SistLocadora();
@@ -40,10 +47,15 @@ public class ProxyLocadora implements Locadora {
     }
 
     public void registrarLocacao(Locacao locacao) {
+        
         sistemaLocadora.registrarLocacao(locacao);
     }
 
-    public void registrarDevolucao(Locacao locacao) {
-        sistemaLocadora.registrarDevolucao(locacao);
+    public void registrarDevolucao(Devolucao devolucao) {
+        sistemaLocadora.registrarDevolucao(devolucao);
+    }
+
+    public void listarFilmes() {
+        sistemaLocadora.listarFilmes();
     }
 }
