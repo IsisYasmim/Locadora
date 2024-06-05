@@ -38,18 +38,20 @@ public class Main {
 
         // Exibição dos detalhes
         pagamentoController.visualizarDetalhes();
+        pause();
         // filmeController.visualizarDetalhes();
         generoController.visualizarDetalhes();
+        pause();
         categoriaController.visualizarDetalhes();
 
         pause();
-        
+
         Filme.listarFilme();
         String nomeFilme = "Her";
 
         System.out.println("\nIremos remover um filme da lista de filmes cadastrados!");
         pause();
-        
+
         Filme.removerFilme(nomeFilme);
         Filme.listarFilme();
     }
