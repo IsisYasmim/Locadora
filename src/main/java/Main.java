@@ -49,6 +49,9 @@ public class Main {
         Filme listaDeSchindler = new Filme("A Lista de Schindler", generoBiografia, 1993);
         Exemplar exemplar5 = new Exemplar(5, 60.0f);
         listaDeSchindler.adicionarExemplar(exemplar5);
+        System.out.println("\n================\n");
+        sistemaLocadoraAtendente.cadastrarFilme(jogosVorazes);
+        sistemaLocadoraAtendente.cadastrarCliente(cliente);
 
         sistemaLocadoraGerente.cadastrarCliente(cliente);
         sistemaLocadoraGerente.cadastrarFilme(filme);
@@ -57,11 +60,18 @@ public class Main {
         sistemaLocadoraGerente.cadastrarFilme(interestelar);
         sistemaLocadoraGerente.cadastrarFilme(listaDeSchindler);
 
-        
+        System.out.println("\n================\n");
         Locacao locacao = new Locacao(exemplar, cliente);
         sistemaLocadoraAtendente.registrarLocacao(locacao);
-        Pagamento pagamento = new Boleto();
+
+        System.out.println("\n================\n");
+        Locacao locacao2 = new Locacao(exemplar, cliente);
+        sistemaLocadoraAtendente.registrarLocacao(locacao2);
+        System.out.println("\n================\n");
+        
+        Pagamento pagamento = neSw Boleto();
         Devolucao devolucao = new Devolucao(locacao);
+        
         devolucao.setPagamento(pagamento);
 
         sistemaLocadoraAtendente.registrarDevolucao(devolucao);

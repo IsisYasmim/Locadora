@@ -37,13 +37,11 @@ class SistLocadora implements Locadora {
     public void registrarLocacao(Locacao locacao) {
         locacao.alugar();
         //locacao.getCliente().adicionarLocacao(locacao);
-        System.out.println("Locação registrada com sucesso.");
     }
 
     public void registrarDevolucao(Devolucao devolucao) {
         devolucao.devolver();
         //devolucao.getLocacao().getCliente().removerLocacao(locacao);
-        System.out.println("Devolução registrada com sucesso.");
     }
 
     public void listarFilmes() {
