@@ -1,4 +1,4 @@
-package pessoa;
+package proxy;
 import movimentacoes.Locacao;
 import java.util.ArrayList;
         

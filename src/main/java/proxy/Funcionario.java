@@ -1,4 +1,4 @@
-package pessoa;
+package proxy;
 
 
 class Funcionario extends Pessoa {
